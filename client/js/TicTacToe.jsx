@@ -19,10 +19,9 @@ var TicTacToe = React.createClass({
         };
     },
     render: function(){
-        var fields = this.state.fields.forEach(function(field){
-            var ticOrTac = _.isUndefined(field) ? '' : field ? 'o' : 'x';
+        var fields = this.state.fields.map(function(field, i){
             return (
-                <div className={ticOrTac}></div>    
+                <div key={i} className={_.isUndefined(field) ? '' : field ? 'o' : 'x'}></div>    
             );
         });
         

@@ -55,13 +55,13 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 35);
 	
-	var _App = __webpack_require__(/*! ./App.jsx */ 175);
+	var _TicTacToe = __webpack_require__(/*! ./TicTacToe.jsx */ 175);
 	
-	var _App2 = _interopRequireDefault(_App);
+	var _TicTacToe2 = _interopRequireDefault(_TicTacToe);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	(0, _reactDom.render)(_react2.default.createElement(_App2.default, null), document.getElementById('react'));
+	(0, _reactDom.render)(_react2.default.createElement(_TicTacToe2.default, null), document.getElementById('react'));
 
 /***/ },
 /* 1 */
@@ -21993,9 +21993,9 @@
 
 /***/ },
 /* 175 */
-/*!***************************!*\
-  !*** ./client/js/App.jsx ***!
-  \***************************/
+/*!*********************************!*\
+  !*** ./client/js/TicTacToe.jsx ***!
+  \*********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22010,19 +22010,29 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var App = _react2.default.createClass({
-	    displayName: 'App',
+	var TicTacToe = _react2.default.createClass({
+	    displayName: 'TicTacToe',
 	
+	    getInitialState: function getInitialState() {
+	        return {
+	            turn: 'x',
+	            fields: [true, undefined, undefined, false, undefined, undefined, undefined, undefined, undefined]
+	        };
+	    },
 	    render: function render() {
+	        var fields = this.state.fields.map(function (field, i) {
+	            return _react2.default.createElement('div', { key: i, className: _underscore2.default.isUndefined(field) ? '' : field ? 'o' : 'x' });
+	        });
+	
 	        return _react2.default.createElement(
 	            'div',
-	            null,
-	            'Hello reactive world!'
+	            { className: 'board' },
+	            fields
 	        );
 	    }
 	});
 	
-	module.exports = App;
+	module.exports = TicTacToe;
 
 /***/ },
 /* 176 */
