@@ -22015,8 +22015,8 @@
 	
 	    getInitialState: function getInitialState() {
 	        return {
-	            turn: 'x',
-	            fields: [true, undefined, undefined, false, undefined, undefined, undefined, undefined, undefined]
+	            turn: undefined,
+	            fields: [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
 	        };
 	    },
 	    render: function render() {

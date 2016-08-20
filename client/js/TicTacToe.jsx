@@ -4,14 +4,14 @@ import React from 'react';
 var TicTacToe = React.createClass({
     getInitialState: function(){
         return {
-            turn: 'x',
+            turn: undefined,
             fields: [
                 true,
                 undefined,
                 undefined,
+                undefined,
+                undefined,
                 false,
-                undefined,
-                undefined,
                 undefined,
                 undefined,
                 undefined
